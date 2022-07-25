@@ -1,0 +1,61 @@
+{% extends 'a_base.html' %}
+
+{% block context %}
+    <div id="app1">
+        <template>
+            <el-carousel :interval="4000" type="card" height="200px">
+                 <el-carousel-item v-for="item in images" :key="item">
+                    <el-image :src="item">
+                      <div slot="placeholder" class="image-slot">
+                        <span class="dot">...</span>
+                      </div>
+                    </el-image>
+
+                </el-carousel-item>
+            </el-carousel>
+        </template>
+    </div>
+    <div>
+        <pre style="font-size: 17px">
+            辉龙集团：
+            进销存系统：
+        </pre>
+    </div>
+<div style="position: fixed;bottom: 20px;left: 50px">备案/许可证号  豫ICP备2021008804号</div>
+
+
+<style>
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 500px;
+    margin: 0;
+  }
+
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+  }
+</style>
+    <script>
+    new Vue({
+        el: '#app1',
+        data: {
+            images: [
+                '/static/img/1234.jpg',
+                '/static/img/mz1.jpg',
+                '/static/img/login-image-1.png',
+                '/static/img/bannerNew.png'
+            ]
+        },
+    })
+    </script>
+{% endblock %}
+
+{% block data %}
+
+{% endblock %}

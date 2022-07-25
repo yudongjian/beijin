@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>辉龙集团</title>
+    {#    图标#}
+    <link rel="shortcut icon" href="/static/img/g8.ico">
+
+
+
+    {% block css_js %}
+    {% endblock %}
+    <style>
+        @import url("/static/element/index.css");
+.el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 300px;
+    margin: 0;
+  }
+
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+  }
+    </style>
+</head>
+<body>
+<script src="/static/vue/vue.js"></script>
+<script src="/static/element/index.js"></script>
+
+{# 导航 设置#}
+<div> <img src="/static/img/title.png"></div>
+<div id="app1" style="height: 100px">
+<div class="line"></div>
+<el-menu
+  :default-active="activeIndex2"
+  class="el-menu-demo"
+  mode="horizontal"
+  @select="handleSelect"
+  background-color="#6495ED"
+  text-color="#B8860B"
+  active-text-color="#ffd04b">
+    <el-menu-item index="1"><a href="/" style="font-size: 30px">首页</a></el-menu-item>
+    <el-menu-item index="1"><a href="/" style="font-size: 30px">主营业务</a></el-menu-item>
+    <el-menu-item index="1"><a href="/" style="font-size: 30px">公司简介</a></el-menu-item>
+
+    <el-menu-item index="1"><a href="/" style="font-size: 30px">公司资质</a></el-menu-item>
+    <el-menu-item index="4"><a href="/" style="font-size: 30px">高压清洗管道</a></el-menu-item>
+    <el-menu-item index="4"><a href="/" style="font-size: 30px">非开挖技术</a></el-menu-item>
+    <el-menu-item index="4"><a href="/" style="font-size: 30px">成功案例</a></el-menu-item>
+    <el-menu-item index="4"><a href="/" style="font-size: 30px">扫码联系客服</a></el-menu-item>
+</el-menu>
+</div>
+
+{# 跑马灯设置 #}
+<div id="app">
+<template>
+  <el-carousel :interval="2000" arrow="always">
+    <el-carousel-item v-for="item in images" :key="item">
+      <el-image :src="item">
+    </el-carousel-item>
+  </el-carousel>
+</template>
+</div>
+<script>
+    new Vue({
+        el: '#app1',
+    });
+
+    new Vue({
+        el: '#app',
+        data: {
+            images: [
+                '/static/img/s1.jpg',
+                '/static/img/s2.jpg',
+                '/static/img/s3.png',
+                '/static/img/bannerNew.png',
+            ]
+        },
+    })
+</script>
+</body>
+
+</html>

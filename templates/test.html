@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/jquery/jquery-3.6.0.js"></script>
+
+        <script src="/static/echarts/echarts.min.js"></script>
+    <!-- 引入 vue -->
+    <script type="text/javascript" src="/static/vue/vue.js"></script>
+    <!-- 引入 el 样式 -->
+    <link rel="stylesheet" href="/static/element/index.css">
+    <!-- 引入 el 组件库 -->
+    <script src="/static/element/index.js"></script>
+
+</head>
+
+<body>
+<div id="a123">
+    <el-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</el-button>
+    <el-dialog
+  title="提示"
+  :visible.sync="centerDialogVisible"
+  width="30%"
+  center>
+
+    <label class="checkbox-inline">
+            <input type="checkbox" name="name" value="option1"> 商品名称
+    </label>
+
+    <label class="checkbox-inline">
+            <input type="checkbox" name="num" value="option1"> 商品编码
+    </label>
+
+    <label class="checkbox-inline">
+              <input type="checkbox" name="color" value="option1"> 颜色
+    </label>
+
+    <button id="btnqqq">提交</button>
+
+
+</el-dialog>
+</div>
+
+<script>
+    new Vue({
+        el: "#a123",
+    data() {
+      return {
+        centerDialogVisible: false
+      };
+    }
+  });
+    $.("#btnqqq").click(function (){
+        $.post("/send_addr",
+            {addr: "shanghaishi"},
+            function (){
+                alert("hello word")
+            }
+
+        )
+
+    })
+</script>
+</body>
+
+</html>
