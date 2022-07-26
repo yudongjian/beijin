@@ -15,6 +15,7 @@ handler500 = views.page_error
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.menu),
+    path('yewu/', views.yewu),
     path('base', views.base),
     path('2', views.menu2),
     path('menu/', views.menu),

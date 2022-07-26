@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>辉龙集团</title>
+    <title>北京京雨</title>
     {#    图标#}
     <link rel="shortcut icon" href="/static/img/g8.ico">
 
@@ -35,8 +35,8 @@
 
 {# 导航 设置#}
 <div> <img src="/static/img/title.png"></div>
-<div id="app1" style="height: 100px">
-<div class="line"></div>
+<div id="app1" >
+{#<div class="line"></div>#}
 <el-menu
   :default-active="activeIndex2"
   class="el-menu-demo"
@@ -46,7 +46,7 @@
   text-color="#B8860B"
   active-text-color="#ffd04b">
     <el-menu-item index="1"><a href="/" style="font-size: 30px">首页</a></el-menu-item>
-    <el-menu-item index="1"><a href="/" style="font-size: 30px">主营业务</a></el-menu-item>
+    <el-menu-item index="1"><a href="/yewu" style="font-size: 30px">主营业务</a></el-menu-item>
     <el-menu-item index="1"><a href="/" style="font-size: 30px">公司简介</a></el-menu-item>
 
     <el-menu-item index="1"><a href="/" style="font-size: 30px">公司资质</a></el-menu-item>
@@ -58,15 +58,25 @@
 </div>
 
 {# 跑马灯设置 #}
-<div id="app">
+<div id="app" style="left: 10%; right:10%; position: absolute;">
 <template>
-  <el-carousel :interval="2000" arrow="always">
+  <el-carousel height="450px" :interval="2000" arrow="always">
     <el-carousel-item v-for="item in images" :key="item">
       <el-image :src="item">
     </el-carousel-item>
   </el-carousel>
 </template>
 </div>
+<div style="width: 10%; height: 450px; background-color: #FFF8DC">
+    <br><br><br>
+    <div style="background-color: white;">北京京雨位于北京市区，服务遍及全国各地，并拥有多家合作伙伴，及时的为您服务！</div>
+</div>
+{# 这里挖坑 #}
+{% block context %}K
+
+{% endblock %}
+
+
 <script>
     new Vue({
         el: '#app1',
@@ -77,9 +87,11 @@
         data: {
             images: [
                 '/static/img/s1.jpg',
-                '/static/img/s2.jpg',
-                '/static/img/s3.png',
-                '/static/img/bannerNew.png',
+                '/static/img/song1.jpg',
+                '/static/img/song2.jpg',
+                '/static/img/song3.jpg',
+
+
             ]
         },
     })

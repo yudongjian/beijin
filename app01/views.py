@@ -22,8 +22,10 @@ def page_error(request):
 
 # 菜单
 def menu(request):
-        return render(request, 'menu.html', {'login_statu': request.session.get('user')})
+    return render(request, 'menu.html')
 
+def yewu(request):
+    return render(request, 'yewu.html')
 
 def base(request):
     return render(request, 'a_base.html')
